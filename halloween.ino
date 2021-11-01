@@ -62,9 +62,44 @@ void setup()
 void lightUp() {
   digitalWrite(pinLightLeft, HIGH);
   digitalWrite(pinLightRight, HIGH);
-  delay(2000);
+  delay(100);
+  flickerBoth();
+  flickerRight();
+  flickerLeft();
+  flickerBoth();
+  flickerRight();
+  flickerBoth();
+  flickerLeft();
+  delay(1000);
+  flickerBoth();
+  flickerRight();
+  flickerLeft();
+  delay(1000);
   digitalWrite(pinLightLeft, LOW);
   digitalWrite(pinLightRight, LOW);
+}
+
+void flickerBoth() {
+  digitalWrite(pinLightLeft, LOW);
+  digitalWrite(pinLightRight, LOW);
+  delay(50);
+  digitalWrite(pinLightLeft, HIGH);
+  digitalWrite(pinLightRight, HIGH);
+  delay(100);
+}
+
+void flickerLeft() {
+  digitalWrite(pinLightLeft, LOW);
+  delay(50);
+  digitalWrite(pinLightLeft, HIGH);
+  delay(100);
+}
+
+void flickerRight() {
+  digitalWrite(pinLightRight, LOW);
+  delay(50);
+  digitalWrite(pinLightRight, HIGH);
+  delay(100);
 }
 
 void loop()
